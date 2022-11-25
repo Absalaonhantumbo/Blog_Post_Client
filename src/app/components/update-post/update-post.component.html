@@ -1,0 +1,53 @@
+<form #singInForm="ngForm" (ngSubmit)="onUpdatePost()">
+    <h1 class="h3 mb-3 fw-normal">alterar Posts</h1>
+  
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Title"
+        [(ngModel)]= "postt.title"
+        #title
+        name="title"
+        required
+      >
+      <label for="floatingInput">Title"</label>
+    </div>
+    <div class="form-floating">
+      <input
+        name="content"
+        type="text"
+        class="form-control"
+        id="floatingPassword"        placeholder="content"
+        [(ngModel)]= "postt.content"
+        #content
+        required
+      >
+      <label for="floatingPassword">Content</label>
+    </div>
+    <div class="form-floating">
+        <input
+          name="imageUrl"
+          type="text"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="imageUrl"
+          [(ngModel)]= "postt.imageUrl"
+          #imageUrl
+          required
+        >
+        <label for="floatingPassword">imageUrl</label>
+      </div>
+  
+    <button 
+            class="w-40 btn btn-lg btn-primary"
+            type="submit"
+    >Alterar</button>
+    <button
+            class="w-40 btn btn-lg btn-danger"
+            (click)="backHome()"
+    >Cancelar</button>
+  </form>
+  
+

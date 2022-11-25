@@ -1,0 +1,10 @@
+.footer{
+    position: -ms-device-fixed;
+    bottom: 0;
+}
+
+strong{
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    color: #008cff;
+
+}

@@ -1,0 +1,43 @@
+<div class="card mx-auto">
+  <div class="row">
+    <div class="col-md-6">
+      <img src={{post.imageUrl}} alt={{post.imageUrl}} class="card-img-bottom">
+    </div>
+    <div class="col-md-6 card mx-auto">
+      
+      <div class="card-body">
+        
+        <h5 class="card-title">Title: {{post.title}}</h5>
+        <p class="card-text"><strong>Content:</strong> {{post.content}}</p>
+        <p class="card-text"><strong>Created At:</strong> {{post.dateCreated | date}}</p>
+        <p class="card-text"><small class="text-muted"><strong>Author:</strong> {{post.author.name}}</small></p>
+      </div>
+      <div *ngIf="userService.isAuthorize(post.author.id)" class="buttao" style="margin: 5px 0 5px 15px;">
+        <button 
+          class ="button btn btn-danger"
+          [swal]="{
+            title: 'Atencao ...',
+            text: 'Deseja mesmo excluir o post',
+            showDenyButton: true, denyButtonText: 'Nao',
+            confirmButtonText: 'Sim, excluir'}" (confirm)="ondelete()"
+          >delete</button>
+        <button class ="button btn btn-info" routerLink="/update-post/{{post.id}}">update</button>
+      </div>
+      <div class="row">
+        <div class="col-md-10" style="margin-top: 15px; align-items: flex-start;">
+            <button class="button btn btn-light btn-lg">
+              <span class="material-icons" style="color: rgb(182, 245, 236);">
+                thumb_up
+                </span>
+            </button>
+            <button class="button btn btn-light">
+              <span class="material-icons" style="color: rgb(182, 245, 236);">
+                feedback
+                </span>
+            </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

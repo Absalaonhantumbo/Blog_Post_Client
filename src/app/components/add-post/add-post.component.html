@@ -1,0 +1,85 @@
+<div class="row">
+  <form [formGroup]="postFormGroup">
+    <div class="form-floating col-md-12">
+      <input type="text" class="form-control" formControlName="title" placeholder="Title">
+      <label>Title</label>
+    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Content</mat-label>
+      <textarea matInput type="text" placeholder="Content..." formControlName="content" ></textarea>
+    </mat-form-field>
+    <!-- <div class="form-floating col-md-12">
+      <input type="text" class="form-control" formControlName="content" placeholder="Content">
+      <label>Content</label>
+    </div>  -->
+    <input type="file" class="form-control my-2" formControlName="postImage" (change)="onImageFileChange($event)">
+    <div class="form-floating col-md-12">
+      <button [disabled]="!postFormGroup.valid"
+            class=" btn btn-primary"
+            (click)="fileFormSubmit()"
+      >Adicionar</button>
+      <button
+            class="w-40 btn btn-danger"
+            (click)="backHome()"
+    >Cancelar</button>
+    </div>
+  </form>
+</div>
+
+
+<!-- <div class="row">
+<form #addPostForm="ngForm"  (ngSubmit)="onAddPost()">
+    <h1 class="h3 mb-3 fw-normal">Criar Posts</h1>
+
+    <div class="form-floating col-md-12">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Title"
+        [(ngModel)]= "postt.title"
+        #title
+        name="title"
+        required
+      >
+      <label for="floatingInput">Title</label>
+    </div>
+    <div class="form-floating col-md-12">
+      <input
+        name="content"
+        type="text"
+        class="form-control"
+        id="floatingTitle"        placeholder="content"
+        [(ngModel)]= "postt.content"
+        #content
+        required
+      >
+      <label for="floatingTitle">Content</label>
+    </div>
+    <div class="form-floating col-md-12">
+        <input
+          name="imageUrl"
+          type="text"
+          id="floatingPassword"
+          class="form-control"
+          placeholder="imageUrl"
+          [(ngModel)]= "postt.imageUrl"
+          #imageUrl
+          required
+
+        >
+        <label for="floatingPassword">imageUrl</label>
+      </div>
+    <div class="col-md-12">
+      <button [disabled]="addPostForm.form.valid"
+            class="w-40 btn btn-lg btn-primary"
+            type="submit"
+    >Adicionar</button>
+    <button
+            class="w-40 btn btn-lg btn-danger"
+            (click)="backHome()"
+    >Cancelar</button>
+    </div>
+  </form>
+
+</div> -->

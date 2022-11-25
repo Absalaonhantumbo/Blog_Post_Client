@@ -1,0 +1,26 @@
+<div class="row">
+    <button
+    class="btn btn-lg btn-primary d-grid gap-2 col-8 mx-auto"
+    *ngIf="userService.isAuthenticated() === true"
+    (click) = "openAddPost()">
+    Create Post
+    </button>
+    <button
+    class="btn btn-lg btn-primary d-grid col-3 mx-auto"
+    *ngIf="userService.isAuthenticated() === true"
+    (click) = "openModal()">
+    Contribuentes
+    </button>
+    <!-- <app-list-users *ngFor="let user of allUsers" ></app-list-users> -->
+</div>
+<div class="row">
+    <app-post-item *ngFor="let post of pageSlice" [post]="post" >
+    </app-post-item>
+    <mat-paginator #paginator
+    [length]="this.posts.length"
+    [pageSizeOptions]="[1,3,posts.length]"
+    aria-label="Select page"
+    (page)="onPageChange($event)">
+
+    </mat-paginator>
+</div>

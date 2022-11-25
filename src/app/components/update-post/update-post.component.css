@@ -1,0 +1,11 @@
+form{
+    width: 50%;
+}
+
+form .form-floating input{
+    margin-bottom: 8px;
+}
+
+form button{
+    margin-right: 8px;
+}
